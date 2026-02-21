@@ -1,15 +1,12 @@
 // =============================================
-//  PORTFOLIO - script.js (PRODUCTION VERSION)
+//  PORTFOLIO - script.js
+//  Student: Sanzidul Islam (sanzid)
+//  Course: CSE 3154 | Vanilla JS only
 // =============================================
 
-// ===============================
-// API BASE URL (IMPORTANT)
-// ===============================
-const API_BASE = "https://sanzid-portfolio-api.onrender.com";
-
-// =============================================
-// 1. NAVIGATION
-// =============================================
+/* -----------------------------------------------
+   1. NAVIGATION — Hamburger + Active Link
+----------------------------------------------- */
 (function initNav() {
   const hamburger = document.querySelector('.hamburger');
   const navLinks  = document.querySelector('.nav-links');
@@ -28,176 +25,260 @@ const API_BASE = "https://sanzid-portfolio-api.onrender.com";
     });
   }
 
+  // Highlight active page link
   const page = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a').forEach(link => {
-    if (link.getAttribute('href') === page) {
+    const href = link.getAttribute('href');
+    if (href === page || (page === '' && href === 'index.html')) {
       link.classList.add('active');
     }
   });
 })();
 
-// =============================================
-// 2. STATS COUNTERS
-// =============================================
-(async function initCounters() {
-  const counters = document.querySelectorAll('.stat-number[data-target]');
-  if (!counters.length) return;
+/* -----------------------------------------------
+   2. THEME TOGGLE — Light / Dark
+----------------------------------------------- */
+(function initTheme() {
+  const btn = document.getElementById('themeToggle');
+  if (!btn) return;
 
-  let savedStats = null;
-  try {
-    const res = await fetch(`${API_BASE}/api/stats`);
-    if (res.ok) savedStats = await res.json();
-  } catch (e) { console.error(e); }
-
-  if (savedStats) {
-    if (savedStats.projects) counters[0].dataset.target = savedStats.projects;
-    if (savedStats.tech)     counters[1].dataset.target = savedStats.tech;
-    if (savedStats.years)    counters[2].dataset.target = savedStats.years;
-    if (savedStats.commit)   counters[3].dataset.target = savedStats.commit;
+  const saved = localStorage.getItem('sanzid-theme') || 'dark';
+  if (saved === 'light') {
+    document.body.classList.add('light');
+    btn.textContent = '🌙';
   }
 
-  counters.forEach(el => {
-    const target = parseInt(el.dataset.target);
-    let current = 0;
-    const step = Math.ceil(target / 60);
-    const timer = setInterval(() => {
-      current += step;
-      if (current >= target) {
-        current = target;
-        clearInterval(timer);
-      }
-      el.textContent = current;
-    }, 25);
+  btn.addEventListener('click', () => {
+    document.body.classList.toggle('light');
+    const isLight = document.body.classList.contains('light');
+    btn.textContent = isLight ? '🌙' : '☀️';
+    localStorage.setItem('sanzid-theme', isLight ? 'light' : 'dark');
   });
 })();
 
-// =============================================
-// 3. DYNAMIC CONTENT
-// =============================================
-(async function initDynamicContent() {
+/* -----------------------------------------------
+   3. SCROLL ANIMATIONS (IntersectionObserver)
+----------------------------------------------- */
+(function initScrollAnimations() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 75);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
 
-  // -------- PROJECTS --------
-  const projectsGrid = document.querySelector('.projects-grid');
-  if (projectsGrid) {
-    try {
-      const res = await fetch(`${API_BASE}/api/projects`);
-      const projects = await res.json();
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+})();
 
-      projects.forEach(proj => {
-        const html = `
-          <article class="project-card">
-            <img src="${proj.image}" alt="${proj.title}">
-            <div class="project-body">
-              <h3>${proj.title}</h3>
-              <p>${proj.desc}</p>
-              <div class="project-tags">
-                ${proj.tags.split(',').map(t => `<span>${t.trim()}</span>`).join('')}
-              </div>
-            </div>
-          </article>
-        `;
-        projectsGrid.insertAdjacentHTML('beforeend', html);
-      });
+/* -----------------------------------------------
+   4. SKILL BARS — Animate on Scroll
+----------------------------------------------- */
+(function initSkillBars() {
+  const bars = document.querySelectorAll('.skill-fill');
+  if (!bars.length) return;
 
-    } catch (err) {
-      console.error('Project fetch error:', err);
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const bar = entry.target;
+        bar.style.width = (bar.dataset.width || 0) + '%';
+        observer.unobserve(bar);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  bars.forEach(bar => observer.observe(bar));
+})();
+
+/* -----------------------------------------------
+   5. ANIMATED COUNTERS (stats section)
+----------------------------------------------- */
+(function initCounters() {
+  const counters = document.querySelectorAll('.stat-number[data-target]');
+  if (!counters.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el     = entry.target;
+      const target = parseInt(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      let current  = 0;
+      const step   = Math.max(1, Math.ceil(target / 55));
+      const timer  = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = current + suffix;
+        if (current >= target) clearInterval(timer);
+      }, 28);
+      observer.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(c => observer.observe(c));
+})();
+
+/* -----------------------------------------------
+   6. TYPEWRITER EFFECT
+----------------------------------------------- */
+(function initTypewriter() {
+  const el = document.getElementById('typewriter');
+  if (!el) return;
+
+  const words   = [
+    'ETE Student',
+    'Smart Grid Enthusiast',
+    'Deep Learning & NLP',
+    'IoT Systems Builder',
+    'LLM Explorer'
+  ];
+  let wi = 0, ci = 0, deleting = false;
+
+  function type() {
+    const word = words[wi];
+    el.textContent = deleting ? word.slice(0, ci--) : word.slice(0, ++ci);
+
+    let delay = deleting ? 55 : 95;
+
+    if (!deleting && ci === word.length) {
+      delay = 2000;
+      deleting = true;
+    } else if (deleting && ci === 0) {
+      deleting = false;
+      wi = (wi + 1) % words.length;
+      delay = 380;
     }
+
+    setTimeout(type, delay);
   }
 
-  // -------- EDUCATION --------
-  const eduTable = document.querySelector('.edu-table tbody');
-  if (eduTable) {
-    try {
-      const res = await fetch(`${API_BASE}/api/education`);
-      const education = await res.json();
+  type();
+})();
 
-      education.forEach((edu, i) => {
-        const row = `
-          <tr>
-            <td>${i + 1}</td>
-            <td>${edu.inst}</td>
-            <td>${edu.degree}</td>
-            <td>${edu.year}</td>
-            <td>${edu.status}</td>
-          </tr>
-        `;
-        eduTable.insertAdjacentHTML('beforeend', row);
-      });
+/* -----------------------------------------------
+   7. CONTACT FORM — EmailJS Integration
+----------------------------------------------- */
+(function initContactForm() {
+  const form       = document.getElementById('contactForm');
+  if (!form) return;
 
-    } catch (err) {
-      console.error('Education fetch error:', err);
+  const nameInput  = document.getElementById('name');
+  const emailInput = document.getElementById('email');
+  const msgInput   = document.getElementById('message');
+  const successBox = document.getElementById('formSuccess');
+
+  function showError(input, msg) {
+    input.classList.add('error');
+    const errEl = document.getElementById(input.id + 'Error');
+    if (errEl) { errEl.textContent = msg; errEl.classList.add('show'); }
+  }
+
+  function clearError(input) {
+    input.classList.remove('error');
+    const errEl = document.getElementById(input.id + 'Error');
+    if (errEl) errEl.classList.remove('show');
+  }
+
+  [nameInput, emailInput, msgInput].forEach(inp => {
+    if (inp) inp.addEventListener('input', () => clearError(inp));
+  });
+
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    let valid = true;
+
+    if (!nameInput.value.trim()) {
+      showError(nameInput, 'Full name is required.');
+      valid = false;
+    } else if (nameInput.value.trim().length < 2) {
+      showError(nameInput, 'Name must be at least 2 characters.');
+      valid = false;
+    } else {
+      clearError(nameInput);
     }
-  }
 
-  // -------- ADMIN: UPDATE STATS --------
-  const statsForm = document.getElementById('statsForm');
-  if (statsForm) {
-    statsForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
+    if (!emailInput.value.trim()) {
+      showError(emailInput, 'Email address is required.');
+      valid = false;
+    } else if (!isValidEmail(emailInput.value.trim())) {
+      showError(emailInput, 'Please enter a valid email address.');
+      valid = false;
+    } else {
+      clearError(emailInput);
+    }
 
-      const data = {
-        projects: document.getElementById('statProjects').value,
-        tech:     document.getElementById('statTech').value,
-        years:    document.getElementById('statYears').value,
-        commit:   document.getElementById('statCommit').value
-      };
+    if (!msgInput.value.trim()) {
+      showError(msgInput, 'Message cannot be empty.');
+      valid = false;
+    } else if (msgInput.value.trim().length < 15) {
+      showError(msgInput, 'Message should be at least 15 characters.');
+      valid = false;
+    } else {
+      clearError(msgInput);
+    }
 
-      await fetch(`${API_BASE}/api/stats`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
+    if (!valid) return;
 
-      alert('Stats Updated');
+    const btn = form.querySelector('.btn-submit');
+    btn.textContent = "Sending...";
+    btn.disabled = true;
+
+    emailjs.send("service_9nm3rct", "template_s8yqn7b", {
+      from_name: nameInput.value,
+      from_email: emailInput.value,
+      message: msgInput.value
+    })
+    .then(function() {
+      form.reset();
+      btn.textContent = "Send Message ✉️";
+      btn.disabled = false;
+
+      if (successBox) {
+        successBox.textContent = "Message sent successfully!";
+        successBox.classList.add('show');
+        setTimeout(() => successBox.classList.remove('show'), 5000);
+      }
+    })
+    .catch(function(error) {
+      console.error("EmailJS Error:", error);
+      btn.textContent = "Send Message ✉️";
+      btn.disabled = false;
+      alert("Failed to send message.");
     });
-  }
+  });
+})();
 
-  // -------- ADMIN: ADD PROJECT --------
-  const projForm = document.getElementById('projectForm');
-  if (projForm) {
-    projForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
+/* -----------------------------------------------
+   8. PROJECT FILTER (projects.html)
+----------------------------------------------- */
+(function initProjectFilter() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards      = document.querySelectorAll('#projectsGrid .project-card');
+  if (!filterBtns.length) return;
 
-      const newProj = {
-        title: document.getElementById('projTitle').value,
-        category: document.getElementById('projCat').value,
-        desc: document.getElementById('projDesc').value,
-        tags: document.getElementById('projTags').value
-      };
-
-      await fetch(`${API_BASE}/api/projects`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(newProj)
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.classList.remove('btn-primary');
+        b.classList.add('btn-outline');
       });
+      btn.classList.add('btn-primary');
+      btn.classList.remove('btn-outline');
 
-      alert('Project Added');
-      projForm.reset();
-    });
-  }
-
-  // -------- ADMIN: ADD EDUCATION --------
-  const eduForm = document.getElementById('eduForm');
-  if (eduForm) {
-    eduForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const newEdu = {
-        degree: document.getElementById('eduDegree').value,
-        inst:   document.getElementById('eduInst').value,
-        year:   document.getElementById('eduYear').value,
-        status: document.getElementById('eduStatus').value
-      };
-
-      await fetch(`${API_BASE}/api/education`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(newEdu)
+      const filter = btn.dataset.filter;
+      cards.forEach(card => {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.style.display = '';
+          card.style.animation = 'fadeUp 0.4s ease both';
+        } else {
+          card.style.display = 'none';
+        }
       });
-
-      alert('Qualification Added');
-      eduForm.reset();
     });
-  }
-
+  });
 })();

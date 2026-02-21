@@ -147,7 +147,6 @@
           <div style="font-size:0.8rem; color:var(--text-muted);">
             <strong>System Status:</strong> <span style="color:var(--accent);">Active</span> | Last Login: <span id="lastLoginTime">Just now</span>
           </div>
-          <button id="clearDataBtn" class="btn btn-outline" style="padding:8px 16px; font-size:0.75rem; border-color:#ff6b6b; color:#ff6b6b;">Reset All Data <i class="ri-delete-bin-line"></i></button>
         </div>
       </div>
 
@@ -169,36 +168,17 @@
     });
 
     // Mock Upload Logic
-    document.getElementById('cvUploadForm').addEventListener('submit', async (e) => {
+    document.getElementById('cvUploadForm').addEventListener('submit', (e) => {
       e.preventDefault();
       const btn = e.target.querySelector('button');
-      const formData = new FormData(e.target);
-      
       btn.textContent = 'Uploading...';
-      
-      try {
-        const res = await fetch('/api/upload-cv', { method: 'POST', body: formData });
-        if (!res.ok) throw new Error('Upload failed');
-        
+      setTimeout(() => {
         document.getElementById('uploadSuccess').classList.add('show');
         btn.textContent = 'Update CV 📤';
         setTimeout(() => document.getElementById('uploadSuccess').classList.remove('show'), 3000);
-      } catch (err) {
-        alert('Failed to upload CV');
-        btn.textContent = 'Update CV 📤';
-      }
+      }, 1500);
     });
 
-    // Clear Data Logic
-    document.getElementById('clearDataBtn').addEventListener('click', () => {
-      if(confirm('Are you sure you want to delete all dynamic data (projects, stats, education)?')) {
-        localStorage.removeItem('sanzid_stats');
-        localStorage.removeItem('sanzid_projects');
-        localStorage.removeItem('sanzid_education');
-        alert('Data cleared!');
-        location.reload();
-      }
-    });
   </script>
 </body>
 </html>
