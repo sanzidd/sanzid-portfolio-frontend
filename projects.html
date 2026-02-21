@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanzidul Islam | Projects</title>
+  <link rel="icon" href="logo.jpg" type="image/jpeg">
+  <meta property="og:image" content="logo.jpg">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo"><img src="logo.jpg" alt="Sanzid"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-extras">
+      <button class="theme-btn" id="themeToggle" title="Toggle theme">☀️</button>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <div class="page-hero">
+      <p class="breadcrumb"><a href="index.html">Home</a> / Projects</p>
+      <h1>My <span style="color:var(--accent)">Projects</span></h1>
+    </div>
+
+    <section class="section">
+
+      <div class="section-header fade-in">
+        <span class="section-tag">// What I've Built</span>
+        <h2 class="section-title">Projects &amp; Experience</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-bottom:2.5rem;" class="fade-in">
+        <button class="btn btn-primary filter-btn" data-filter="all">All</button>
+        <button class="btn btn-outline filter-btn" data-filter="iot">IoT / Embedded</button>
+        <button class="btn btn-outline filter-btn" data-filter="ml">Machine Learning</button>
+        <button class="btn btn-outline filter-btn" data-filter="game">Game Dev</button>
+        <button class="btn btn-outline filter-btn" data-filter="web">Web Dev</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- Project 1: Smart Grid -->
+        <article class="project-card fade-in" data-category="iot">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop" alt="Smart Grid" class="project-banner">
+          <div class="project-body">
+            <div class="project-number">01 / IoT + Power Systems</div>
+            <h3 class="project-title">Smart Power Grid – Power Quality Analysis &amp; Automated Control</h3>
+            <p class="project-desc">
+              An IoT-based intelligent power grid system featuring real-time monitoring of 
+              Voltage, Current, Energy, Power Factor and THD. Includes automatic power factor 
+              correction using capacitor banks, fault and over-voltage/over-current detection, 
+              intelligent load isolation and control across a 3-house model, RTC-based scheduling, 
+              remote monitoring, monthly billing reports via Gmail, and FFT-based THD analysis for 
+              power quality improvement.
+            </p>
+            <p style="font-size:0.82rem; color:var(--accent); margin-bottom:0.9rem; font-style:italic;">
+              🔮 Future scope: Smart solar grid integration &amp; AI-based grid optimization.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">IoT</span>
+              <span class="project-tag">Arduino / ESP</span>
+              <span class="project-tag">Embedded C</span>
+              <span class="project-tag">FFT Analysis</span>
+              <span class="project-tag">Power Systems</span>
+              <span class="project-tag">RTC Scheduling</span>
+              <span class="project-tag">Gmail API</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Salary Prediction -->
+        <article class="project-card fade-in" data-category="ml">
+          <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=600&auto=format&fit=crop" alt="Salary Prediction" class="project-banner">
+          <div class="project-body">
+            <div class="project-number">02 / Machine Learning</div>
+            <h3 class="project-title">Salary Prediction Using Linear Regression</h3>
+            <p class="project-desc">
+              A machine learning project focused on predictive analytics. Performed Exploratory 
+              Data Analysis (EDA) on a salary dataset, implemented a Linear Regression model, 
+              analyzed cost and loss functions (MSE), evaluated the model using R² score, and 
+              built a complete end-to-end ML pipeline from data preprocessing through to evaluation.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Linear Regression</span>
+              <span class="project-tag">scikit-learn</span>
+              <span class="project-tag">Pandas</span>
+              <span class="project-tag">Matplotlib</span>
+              <span class="project-tag">EDA</span>
+              <span class="project-tag">R² Score</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Car Accident Risk -->
+        <article class="project-card fade-in" data-category="ml">
+          <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=600&auto=format&fit=crop" alt="Car Accident Risk" class="project-banner">
+          <div class="project-body">
+            <div class="project-number">03 / Machine Learning</div>
+            <h3 class="project-title">Car Accident Risk Prediction</h3>
+            <p class="project-desc">
+              Developed a predictive model using polynomial regression to estimate the risk level 
+              of car accidents based on environmental and driver-behavior features such as speed, 
+              weather conditions, road type, and time of day. Performed extensive data preprocessing, 
+              feature selection, and model evaluation, with visualization of actual vs. predicted 
+              values using Matplotlib.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Polynomial Regression</span>
+              <span class="project-tag">scikit-learn</span>
+              <span class="project-tag">NumPy</span>
+              <span class="project-tag">Matplotlib</span>
+              <span class="project-tag">Feature Engineering</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: Profit Prediction -->
+        <article class="project-card fade-in" data-category="ml">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop" alt="Profit Prediction" class="project-banner">
+          <div class="project-body">
+            <div class="project-number">04 / Machine Learning</div>
+            <h3 class="project-title">Profit Prediction with Multiple Regression &amp; One-Hot Encoding</h3>
+            <p class="project-desc">
+              Built a multiple linear regression model to forecast business profit based on 
+              R&amp;D spending, administration costs, marketing budget, and geographical state. 
+              Applied one-hot encoding to handle categorical state variables. Performed feature 
+              selection, residual analysis, and model diagnostics to validate regression assumptions 
+              and maximize prediction accuracy.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Multiple Regression</span>
+              <span class="project-tag">One-Hot Encoding</span>
+              <span class="project-tag">scikit-learn</span>
+              <span class="project-tag">Pandas</span>
+              <span class="project-tag">Seaborn</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5: Car Game -->
+        <article class="project-card fade-in" data-category="game">
+          <img src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?q=80&w=600&auto=format&fit=crop" alt="Car Game" class="project-banner">
+          <div class="project-body">
+            <div class="project-number">05 / Game Development</div>
+            <h3 class="project-title">Browser-Based Car Game</h3>
+            <p class="project-desc">
+              Designed and implemented an interactive browser-based car game using vanilla JavaScript 
+              and the HTML5 Canvas API. Features smooth car movement with keyboard controls, collision 
+              detection with obstacles, a dynamic scoring system, progressively increasing difficulty, 
+              and a game-over screen with restart functionality — built entirely without external game libraries.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">HTML5 Canvas</span>
+              <span class="project-tag">CSS3</span>
+              <span class="project-tag">OOP</span>
+              <span class="project-tag">Collision Detection</span>
+              <span class="project-tag">Game Loop</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 6: Bongo Vashkor Club -->
+        <article class="project-card fade-in" data-category="web">
+          <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=600&auto=format&fit=crop" alt="Bongo Vashkor Club" class="project-banner">
+          <div class="project-body">
+            <div class="project-number">06 / Web Development</div>
+            <h3 class="project-title">Bongo Vashkor Club – Community Management</h3>
+            <p class="project-desc">
+              A full-stack community management website featuring a member directory with photos, 
+              event creation, expense tracking, and secure bKash payment integration. 
+              Includes an admin dashboard for managing club activities and finances.
+              <br><br>
+              <a href="https://blood-brothers-bv.netlify.app/" target="_blank" style="color:var(--accent); font-weight:600;">Live Website <i class="ri-external-link-line"></i></a>
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">Express</span>
+              <span class="project-tag">MongoDB</span>
+              <span class="project-tag">bKash API</span>
+              <span class="project-tag">Netlify/Render</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Coming Soon -->
+      <div class="card fade-in" style="margin-top:3rem; text-align:center; padding:3rem;">
+        <i class="ri-lightbulb-flash-line" style="font-size:3rem; color:var(--accent);"></i>
+        <h3 style="margin:1rem 0 0.5rem; font-size:1.4rem;">AI-Based Grid Optimization &amp; LLM Agents — Coming Soon</h3>
+        <p style="color:var(--text-muted); max-width:520px; margin:0 auto 1.5rem;">
+          Currently exploring smart solar grid integration, AI-driven grid optimization, 
+          and the application of Large Language Models (LLMs) for intelligent system automation.
+        </p>
+        <a href="contact.html" class="btn btn-primary">Collaborate with Me →</a>
+      </div>
+
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="skills.html">Skills</a>
+          <a href="education.html">Education</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <div class="social-links">
+          <a href="https://github.com/sanzidd" target="_blank" class="social-icon"><i class="ri-github-fill"></i></a>
+          <a href="https://www.linkedin.com/in/sanzidul-islam-sanzid-205a75260" target="_blank" class="social-icon"><i class="ri-linkedin-fill"></i></a>
+          <a href="mailto:sanzidis99@gmail.com" class="social-icon"><i class="ri-mail-send-line"></i></a>
+        </div>
+      </div>
+    </div>
+    <p>Built with focus by <strong>Sanzidul Islam</strong> &mdash; CSE 3154 Web Programming &copy; 2026 <a href="admin.html" class="admin-link">Admin</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

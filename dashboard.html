@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | Sanzidul Islam</title>
+  <link rel="icon" href="logo.jpg" type="image/jpeg">
+  <meta property="og:image" content="logo.jpg">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo"><img src="logo.jpg" alt="Sanzid"></a>
+    <div style="display:flex; align-items:center; gap:1rem;">
+      <span style="font-size:0.85rem; color:var(--text-muted);">Welcome, Admin</span>
+      <button id="logoutBtn" class="btn btn-outline" style="padding:8px 16px; font-size:0.8rem;">Logout</button>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <div class="page-hero">
+      <p class="breadcrumb">Admin Panel</p>
+      <h1>Dashboard</h1>
+    </div>
+
+    <section class="section">
+      
+      <!-- 1. CV Update -->
+      <div class="card fade-in" style="max-width:800px; margin:0 auto 2rem;">
+        <div class="section-header" style="margin-bottom:1.5rem;">
+          <span class="section-tag">// File Management</span>
+          <h2 class="section-title" style="font-size:1.8rem;">Update CV</h2>
+        </div>
+
+        <p style="color:var(--text-muted); margin-bottom:2rem;">
+          Upload a new PDF version of your CV. This will replace the current <code>cv.pdf</code> file available for download on the homepage.
+        </p>
+
+        <form id="cvUploadForm">
+          <div class="form-group">
+            <label for="cvFile">Select PDF File</label>
+            <input type="file" id="cvFile" accept=".pdf" style="padding:10px;" />
+          </div>
+
+          <div class="form-success" id="uploadSuccess" style="margin-bottom:1.5rem;">
+            ✅ CV Updated Successfully!
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%;">Update CV <i class="ri-upload-cloud-2-line"></i></button>
+        </form>
+      </div>
+
+      <!-- 2. Update Stats -->
+      <div class="card fade-in" style="max-width:800px; margin:0 auto 2rem;">
+        <div class="section-header" style="margin-bottom:1.5rem;">
+          <span class="section-tag">// Homepage Stats</span>
+          <h2 class="section-title" style="font-size:1.8rem;">Update Counters</h2>
+        </div>
+        <form id="statsForm" style="display:grid; grid-template-columns: 1fr 1fr; gap:1.5rem;">
+          <div class="form-group">
+            <label>Projects Completed</label>
+            <input type="number" id="statProjects" placeholder="e.g. 5" />
+          </div>
+          <div class="form-group">
+            <label>Technologies</label>
+            <input type="number" id="statTech" placeholder="e.g. 8" />
+          </div>
+          <div class="form-group">
+            <label>Years Experience</label>
+            <input type="number" id="statYears" placeholder="e.g. 3" />
+          </div>
+          <div class="form-group">
+            <label>Commitment %</label>
+            <input type="number" id="statCommit" placeholder="e.g. 100" />
+          </div>
+          <div style="grid-column: 1 / -1;">
+            <button type="submit" class="btn btn-primary" style="width:100%;">Save Stats <i class="ri-save-3-line"></i></button>
+          </div>
+        </form>
+      </div>
+
+      <!-- 3. Add Project -->
+      <div class="card fade-in" style="max-width:800px; margin:0 auto 2rem;">
+        <div class="section-header" style="margin-bottom:1.5rem;">
+          <span class="section-tag">// Portfolio</span>
+          <h2 class="section-title" style="font-size:1.8rem;">Add New Project</h2>
+        </div>
+        <form id="projectForm">
+          <div class="form-group">
+            <label>Project Title</label>
+            <input type="text" id="projTitle" placeholder="e.g. AI Traffic Control" required />
+          </div>
+          <div class="form-group">
+            <label>Category (iot, ml, game, other)</label>
+            <select id="projCat" style="width:100%; padding:12px; background:var(--bg-secondary); border:1px solid var(--border); color:var(--text-primary); border-radius:8px;">
+              <option value="iot">IoT / Embedded</option>
+              <option value="ml">Machine Learning</option>
+              <option value="game">Game Dev</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <textarea id="projDesc" rows="3" placeholder="Short description of the project..."></textarea>
+          </div>
+          <div class="form-group">
+            <label>Tags (comma separated)</label>
+            <input type="text" id="projTags" placeholder="e.g. Python, OpenCV, Arduino" />
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Add Project <i class="ri-rocket-line"></i></button>
+        </form>
+      </div>
+
+      <!-- 4. Add Education/Qualification -->
+      <div class="card fade-in" style="max-width:800px; margin:0 auto 2rem;">
+        <div class="section-header" style="margin-bottom:1.5rem;">
+          <span class="section-tag">// Education</span>
+          <h2 class="section-title" style="font-size:1.8rem;">Add Qualification</h2>
+        </div>
+        <form id="eduForm">
+          <div class="form-group">
+            <label>Degree / Certificate Name</label>
+            <input type="text" id="eduDegree" placeholder="e.g. MSc in Data Science" required />
+          </div>
+          <div class="form-group">
+            <label>Institution</label>
+            <input type="text" id="eduInst" placeholder="e.g. BUET" required />
+          </div>
+          <div class="form-group">
+            <label>Year</label>
+            <input type="text" id="eduYear" placeholder="e.g. 2026 - 2028" />
+          </div>
+          <div class="form-group">
+            <label>Status / Result</label>
+            <input type="text" id="eduStatus" placeholder="e.g. Ongoing or GPA 4.00" />
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Add Qualification <i class="ri-graduation-cap-line"></i></button>
+        </form>
+      </div>
+
+      <!-- System Status -->
+      <div class="card fade-in" style="max-width:800px; margin:0 auto;">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div style="font-size:0.8rem; color:var(--text-muted);">
+            <strong>System Status:</strong> <span style="color:var(--accent);">Active</span> | Last Login: <span id="lastLoginTime">Just now</span>
+          </div>
+          <button id="clearDataBtn" class="btn btn-outline" style="padding:8px 16px; font-size:0.75rem; border-color:#ff6b6b; color:#ff6b6b;">Reset All Data <i class="ri-delete-bin-line"></i></button>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Protect Route
+    if (localStorage.getItem('admin_session') !== 'true') {
+      window.location.href = 'admin.html';
+    }
+
+    // Logout Logic
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      localStorage.removeItem('admin_session');
+      window.location.href = 'index.html';
+    });
+
+    // Mock Upload Logic
+    document.getElementById('cvUploadForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = e.target.querySelector('button');
+      const formData = new FormData(e.target);
+      
+      btn.textContent = 'Uploading...';
+      
+      try {
+        const res = await fetch('/api/upload-cv', { method: 'POST', body: formData });
+        if (!res.ok) throw new Error('Upload failed');
+        
+        document.getElementById('uploadSuccess').classList.add('show');
+        btn.textContent = 'Update CV 📤';
+        setTimeout(() => document.getElementById('uploadSuccess').classList.remove('show'), 3000);
+      } catch (err) {
+        alert('Failed to upload CV');
+        btn.textContent = 'Update CV 📤';
+      }
+    });
+
+    // Clear Data Logic
+    document.getElementById('clearDataBtn').addEventListener('click', () => {
+      if(confirm('Are you sure you want to delete all dynamic data (projects, stats, education)?')) {
+        localStorage.removeItem('sanzid_stats');
+        localStorage.removeItem('sanzid_projects');
+        localStorage.removeItem('sanzid_education');
+        alert('Data cleared!');
+        location.reload();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanzidul Islam | Contact</title>
+  <link rel="icon" href="logo.jpg" type="image/jpeg">
+  <meta property="og:image" content="logo.jpg">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo"><img src="logo.jpg" alt="Sanzid"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-extras">
+      <button class="theme-btn" id="themeToggle" title="Toggle theme">☀️</button>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <div class="page-hero">
+      <p class="breadcrumb"><a href="index.html">Home</a> / Contact</p>
+      <h1>Get In <span style="color:var(--accent)">Touch</span></h1>
+    </div>
+
+    <section class="section">
+
+      <div class="section-header fade-in">
+        <span class="section-tag">// Let's Connect</span>
+        <h2 class="section-title">Contact Me</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- Left: Info -->
+        <div class="fade-in">
+          <div class="contact-info">
+            <h3>Open to Collaborations</h3>
+            <p>
+              I'm open to collaborations in <strong>Smart Grid</strong>, 
+              <strong>Machine Learning</strong>, and <strong>Intelligent Energy Systems</strong>. 
+              Whether you have a project idea, a research question, or just want to say hello — 
+              feel free to reach out. I'll respond as soon as possible!
+            </p>
+          </div>
+
+          <div class="contact-links">
+
+            <a href="mailto:sanzidis99@gmail.com" class="contact-link">
+              <div class="contact-link-icon"><i class="ri-mail-send-line"></i></div>
+              <div>
+                <div style="font-size:0.72rem; color:var(--text-muted); margin-bottom:2px; text-transform:uppercase; letter-spacing:1px;">Email</div>
+                <div class="contact-link-text">sanzidis99@gmail.com</div>
+              </div>
+            </a>
+
+            <a href="https://github.com/sanzidd" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <div class="contact-link-icon"><i class="ri-github-fill"></i></div>
+              <div>
+                <div style="font-size:0.72rem; color:var(--text-muted); margin-bottom:2px; text-transform:uppercase; letter-spacing:1px;">GitHub</div>
+                <div class="contact-link-text">github.com/sanzidd</div>
+              </div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/sanzidul-islam-sanzid-205a75260" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <div class="contact-link-icon"><i class="ri-linkedin-fill"></i></div>
+              <div>
+                <div style="font-size:0.72rem; color:var(--text-muted); margin-bottom:2px; text-transform:uppercase; letter-spacing:1px;">LinkedIn</div>
+                <div class="contact-link-text">linkedin.com/in/sanzidul-islam-sanzid</div>
+              </div>
+            </a>
+
+            <div class="contact-link" style="cursor:default;">
+              <div class="contact-link-icon"><i class="ri-map-pin-line"></i></div>
+              <div>
+                <div style="font-size:0.72rem; color:var(--text-muted); margin-bottom:2px; text-transform:uppercase; letter-spacing:1px;">Location</div>
+                <div class="contact-link-text">Dhaka, Bangladesh 🇧🇩</div>
+              </div>
+            </div>
+
+            <div class="contact-link" style="cursor:default;">
+              <div class="contact-link-icon"><i class="ri-focus-3-line"></i></div>
+              <div>
+                <div style="font-size:0.72rem; color:var(--text-muted); margin-bottom:2px; text-transform:uppercase; letter-spacing:1px;">Focus Areas</div>
+                <div class="contact-link-text">Smart Grid · ML · IoT · Energy AI</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="fade-in">
+          <div class="contact-form">
+            <h3 style="font-size:1.25rem; margin-bottom:1.75rem;">Send a Message</h3>
+
+            <form id="contactForm" novalidate>
+
+              <div class="form-group">
+                <label for="name">Full Name <span style="color:#ff6b6b;">*</span></label>
+                <input type="text" id="name" name="name" placeholder="Your Full Name" autocomplete="name" />
+                <p class="form-error" id="nameError"></p>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address <span style="color:#ff6b6b;">*</span></label>
+                <input type="email" id="email" name="email" placeholder="yourname@example.com" autocomplete="email" />
+                <p class="form-error" id="emailError"></p>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="e.g. Collaboration on Smart Grid Project" />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message <span style="color:#ff6b6b;">*</span></label>
+                <textarea id="message" name="message" rows="5"
+                  placeholder="Tell me about your project, idea, or question..."></textarea>
+                <p class="form-error" id="messageError"></p>
+              </div>
+
+              <button type="submit" class="btn-submit">Send Message <i class="ri-send-plane-fill"></i></button>
+
+              <div class="form-success" id="formSuccess">
+                ✅ Message sent successfully! I'll get back to you soon.
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="skills.html">Skills</a>
+          <a href="education.html">Education</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <div class="social-links">
+          <a href="https://github.com/sanzidd" target="_blank" class="social-icon"><i class="ri-github-fill"></i></a>
+          <a href="https://www.linkedin.com/in/sanzidul-islam-sanzid-205a75260" target="_blank" class="social-icon"><i class="ri-linkedin-fill"></i></a>
+          <a href="mailto:sanzidis99@gmail.com" class="social-icon"><i class="ri-mail-send-line"></i></a>
+        </div>
+      </div>
+    </div>
+    <p>Built with focus by <strong>Sanzidul Islam</strong> &mdash; CSE 3154 Web Programming &copy; 2026 <a href="admin.html" class="admin-link">Admin</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanzidul Islam | Portfolio</title>
+  <meta name="description" content="Portfolio of Sanzidul Islam — ETE Student, Smart Grid, Machine Learning & IoT Systems." />
+  <link rel="icon" href="logo.jpg" type="image/jpeg">
+  <meta property="og:image" content="logo.jpg">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo"><img src="logo.jpg" alt="Sanzid"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-extras">
+      <button class="theme-btn" id="themeToggle" title="Toggle theme">☀️</button>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <span class="hero-tag">👋 Welcome to my portfolio</span>
+        <h1 class="hero-title">
+          Hi, I'm <span class="accent">Sanzidul Islam</span>
+        </h1>
+        <p class="hero-role">
+          <span id="typewriter"></span><span class="cursor">|</span>
+        </p>
+        <p class="hero-subtitle">
+          Electronics &amp; Telecommunication Engineering student with a passion for 
+          <strong>Smart Grid Systems</strong>, <strong>Deep Learning</strong>, 
+          and <strong>NLP &amp; LLMs</strong>. Building data-driven solutions 
+          at the intersection of power engineering and modern AI.
+        </p>
+        <div class="hero-buttons">
+          <a href="cv.pdf" class="btn btn-primary" target="_blank">View CV <i class="ri-eye-line"></i></a>
+          <a href="cv.pdf" class="btn btn-outline" download>Download CV <i class="ri-download-line"></i></a>
+          <a href="projects.html" class="btn btn-outline">View Projects</a>
+        </div>
+      </div>
+
+      <div class="hero-img-wrap">
+        <div class="hero-circle-container">
+          <img src="profile2.jpg" alt="Sanzidul Islam" class="hero-img">
+          <div class="hero-icon icon-ml" title="Machine Learning"><i class="ri-robot-line"></i></div>
+          <div class="hero-icon icon-dl" title="Deep Learning"><i class="ri-brain-line"></i></div>
+          <div class="hero-icon icon-js" title="JavaScript"><i class="ri-javascript-line"></i></div>
+          <div class="hero-icon icon-py" title="Python"><i class="ri-code-s-slash-line"></i></div>
+          <div class="hero-icon icon-node" title="Node.js"><i class="ri-nodejs-line"></i></div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <div class="line"></div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="quick-stats">
+      <div class="stat-item fade-in">
+        <span class="stat-number" data-target="6" data-suffix="+">0+</span>
+        <span class="stat-label">Projects Completed</span>
+      </div>
+      <div class="stat-item fade-in">
+        <span class="stat-number" data-target="29" data-suffix="+">0+</span>
+        <span class="stat-label">Technologies Used</span>
+      </div>
+      <div class="stat-item fade-in">
+        <span class="stat-number" data-target="2" data-suffix=" yrs">0 yrs</span>
+        <span class="stat-label">Learning Journey</span>
+      </div>
+      <div class="stat-item fade-in">
+        <span class="stat-number" data-target="100" data-suffix="%">0%</span>
+        <span class="stat-label">Commitment</span>
+      </div>
+    </section>
+
+    <!-- ABOUT SNIPPET -->
+    <section class="section" style="background:var(--bg-secondary); border-bottom:1px solid var(--border);">
+      <div class="section-header fade-in">
+        <span class="section-tag">// Who I Am</span>
+        <h2 class="section-title">A Quick Introduction</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="home-about-grid fade-in">
+        <div class="home-about-text">
+          <p>
+            I'm <strong>Sanzidul Islam</strong>, an undergraduate student of 
+            <strong>Electronics &amp; Telecommunication Engineering (ETE)</strong>. 
+            I have a strong interest in <strong>Smart Grid Systems</strong>, 
+            power quality analysis, and applying machine learning to energy forecasting 
+            and optimization problems.
+          </p>
+          <p style="margin-top:1rem;">
+            My career goal is to design intelligent, data-driven power and IoT systems 
+            that make energy infrastructure smarter, safer, and more efficient. 
+            I actively work with ML for prediction problems and embedded systems for real-world IoT deployment.
+          </p>
+          <a href="about.html" class="btn btn-outline" style="margin-top:1.5rem; display:inline-flex;">Read Full Bio →</a>
+        </div>
+        <div class="home-interests">
+          <div class="interest-chip"><i class="ri-flashlight-line"></i> Smart Grid Systems</div>
+          <div class="interest-chip"><i class="ri-brain-line"></i> Deep Learning</div>
+          <div class="interest-chip"><i class="ri-chat-quote-line"></i> NLP &amp; LLMs</div>
+          <div class="interest-chip"><i class="ri-cpu-line"></i> Embedded Systems</div>
+          <div class="interest-chip"><i class="ri-robot-line"></i> Machine Learning</div>
+          <div class="interest-chip"><i class="ri-bar-chart-box-line"></i> Energy Forecasting</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS -->
+    <section class="section">
+      <div class="section-header fade-in">
+        <span class="section-tag">// Featured Work</span>
+        <h2 class="section-title">Selected Projects</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="projects-grid">
+
+        <article class="project-card fade-in">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop" alt="Smart Grid" class="project-banner">
+          <div class="project-body">
+            <div class="project-number">01 / IoT + Power Systems</div>
+            <h3 class="project-title">Smart Power Grid System</h3>
+            <p class="project-desc">
+              IoT-based intelligent power grid with real-time monitoring, automatic power factor 
+              correction, fault detection, RTC scheduling, Gmail billing, and FFT-based THD analysis.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">IoT</span>
+              <span class="project-tag">Embedded C</span>
+              <span class="project-tag">FFT Analysis</span>
+              <span class="project-tag">Power Systems</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card fade-in">
+          <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=600&auto=format&fit=crop" alt="Salary Prediction" class="project-banner">
+          <div class="project-body">
+            <div class="project-number">02 / Machine Learning</div>
+            <h3 class="project-title">Salary Prediction — Linear Regression</h3>
+            <p class="project-desc">
+              End-to-end ML pipeline with EDA, linear regression, MSE cost analysis, 
+              and R² evaluation on a salary dataset.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Linear Regression</span>
+              <span class="project-tag">scikit-learn</span>
+              <span class="project-tag">Pandas</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card fade-in">
+          <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=600&auto=format&fit=crop" alt="Car Accident Risk" class="project-banner">
+          <div class="project-body">
+            <div class="project-number">03 / Machine Learning</div>
+            <h3 class="project-title">Car Accident Risk Prediction</h3>
+            <p class="project-desc">
+              Polynomial regression model predicting accident risk from environmental 
+              and behavioral factors, with full preprocessing and visualization pipeline.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Polynomial Regression</span>
+              <span class="project-tag">Matplotlib</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div style="text-align:center; margin-top:3rem;" class="fade-in">
+        <a href="projects.html" class="btn btn-outline">View All Projects →</a>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-section">
+      <div class="fade-in">
+        <span class="section-tag">// Open to Collaborations</span>
+        <h2 class="section-title">Let's Build Something Smart</h2>
+        <p style="color:var(--text-muted); max-width:530px; margin:0 auto 2rem;">
+          I'm open to collaborations in Smart Grid, Machine Learning, Embedded Systems, 
+          and Intelligent Energy Systems. Have an exciting idea? Let's connect!
+        </p>
+        <a href="contact.html" class="btn btn-primary">Say Hello <i class="ri-chat-smile-2-line"></i></a>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="skills.html">Skills</a>
+          <a href="education.html">Education</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <div class="social-links">
+          <a href="https://github.com/sanzidd" target="_blank" class="social-icon"><i class="ri-github-fill"></i></a>
+          <a href="https://www.linkedin.com/in/sanzidul-islam-sanzid-205a75260" target="_blank" class="social-icon"><i class="ri-linkedin-fill"></i></a>
+          <a href="mailto:sanzidis99@gmail.com" class="social-icon"><i class="ri-mail-send-line"></i></a>
+        </div>
+      </div>
+    </div>
+    <p>Built with focus by <strong>Sanzidul Islam</strong> &mdash; CSE 3154 Web Programming &copy; 2026 <a href="admin.html" class="admin-link">Admin</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
