@@ -2154,16 +2154,7 @@ footer::before {
   box-shadow: 0 8px 25px rgba(0,217,180,0.25);
 }
 
-/* ============================================================
-   CUSTOM CURSOR GLOW (Desktop)
-   ============================================================ */
-.cursor-glow {
-  display: none;
-}
-
-.cursor-glow.active {
-  opacity: 1;
-}
+/* Cursor glow — removed */
 
 /* ============================================================
    ENHANCED PAGE-HERO (inner pages)
