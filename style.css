@@ -2287,7 +2287,6 @@ footer::before {
    RESPONSIVE for new elements
    ============================================================ */
 @media (max-width: 768px) {
-  .cursor-glow { display: none; }
   .back-to-top {
     bottom: 1.2rem; right: 1.2rem;
     width: 42px; height: 42px;
