@@ -3,9 +3,9 @@
 # 🌐 Sanzidul Islam — Personal Portfolio
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-sanzid--portfolio.vercel.app-blue?style=for-the-badge&logo=vercel)](https://sanzid-portfolio.vercel.app/)
-[![HTML](https://img.shields.io/badge/HTML-64.7%25-orange?style=for-the-badge&logo=html5&logoColor=white)](https://github.com/sanzidd/sanzid-portfolio-frontend)
-[![CSS](https://img.shields.io/badge/CSS-27.3%25-blue?style=for-the-badge&logo=css3&logoColor=white)](https://github.com/sanzidd/sanzid-portfolio-frontend)
-[![JavaScript](https://img.shields.io/badge/JavaScript-8.0%25-yellow?style=for-the-badge&logo=javascript&logoColor=black)](https://github.com/sanzidd/sanzid-portfolio-frontend)
+[![HTML](https://img.shields.io/badge/HTML-54.3%25-orange?style=for-the-badge&logo=html5&logoColor=white)](https://github.com/sanzidd/sanzid-portfolio-frontend)
+[![CSS](https://img.shields.io/badge/CSS-34%25-blue?style=for-the-badge&logo=css3&logoColor=white)](https://github.com/sanzidd/sanzid-portfolio-frontend)
+[![JavaScript](https://img.shields.io/badge/JavaScript-11.7%25-yellow?style=for-the-badge&logo=javascript&logoColor=black)](https://github.com/sanzidd/sanzid-portfolio-frontend)
 
 A clean, responsive personal portfolio website showcasing my journey as an **Electronics & Telecommunication Engineering** student with a passion for Smart Grid Systems, Deep Learning, and NLP & LLMs.
 
