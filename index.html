@@ -34,34 +34,44 @@
 
     <!-- HERO -->
     <section class="hero">
+      <canvas id="particles"></canvas>
+      <div class="aurora-blob aurora-blob-1"></div>
+      <div class="aurora-blob aurora-blob-2"></div>
+      <div class="aurora-blob aurora-blob-3"></div>
+      <div class="aurora-blob aurora-blob-4"></div>
+      <!-- Floating Geometric Shapes -->
+      <div class="geo-shape geo-shape-circle" style="width:40px;height:40px;top:15%;left:8%;"></div>
+      <div class="geo-shape geo-shape-square" style="width:25px;height:25px;top:60%;left:5%;"></div>
+      <div class="geo-shape geo-shape-circle" style="width:20px;height:20px;top:80%;right:10%;"></div>
+      <div class="geo-shape geo-shape-tri" style="top:25%;right:15%;"></div>
+
       <div class="hero-content">
-        <span class="hero-tag">👋 Welcome to my portfolio</span>
-        <h1 class="hero-title">
-          Hi, I'm <span class="accent">Sanzidul Islam</span>
+        <span class="hero-tag" data-reveal="down" data-delay="100">👋 Welcome to my portfolio</span>
+        <h1 class="hero-title" data-reveal="up" data-delay="200">
+          Hi, I'm <span class="accent glitch" data-text="Sanzidul Islam">Sanzidul Islam</span>
         </h1>
-        <p class="hero-role">
+        <p class="hero-role" data-reveal="up" data-delay="300">
           <span id="typewriter"></span><span class="cursor">|</span>
         </p>
-        <p class="hero-subtitle">
+        <p class="hero-subtitle" data-reveal="up" data-delay="400">
           Electronics &amp; Telecommunication Engineering student with a passion for 
           <strong>Smart Grid Systems</strong>, <strong>Deep Learning</strong>, 
           and <strong>NLP &amp; LLMs</strong>. Building data-driven solutions 
           at the intersection of power engineering and modern AI.
         </p>
-        <div class="hero-buttons">
+        <div class="hero-buttons" data-reveal="up" data-delay="500">
           <a href="cv.pdf" class="btn btn-primary" target="_blank">View CV <i class="ri-eye-line"></i></a>
           <a href="projects.html" class="btn btn-outline">View Projects</a>
         </div>
       </div>
 
-      <div class="hero-img-wrap">
+      <div class="hero-img-wrap" data-reveal="right" data-delay="300">
         <div class="hero-circle-container">
           <img src="profile2.jpg" alt="Sanzidul Islam" class="hero-img">
           <div class="hero-icon icon-ml" title="Machine Learning"><i class="ri-robot-line"></i></div>
           <div class="hero-icon icon-dl" title="Deep Learning"><i class="ri-brain-line"></i></div>
           <div class="hero-icon icon-js" title="JavaScript"><i class="ri-javascript-line"></i></div>
           <div class="hero-icon icon-py" title="Python"><i class="ri-code-s-slash-line"></i></div>
-
         </div>
       </div>
 
@@ -71,35 +81,41 @@
       </div>
     </section>
 
+    <div class="wave-divider"></div>
+
     <!-- STATS -->
     <section class="quick-stats">
-      <div class="stat-item fade-in">
-        <span class="stat-number" data-target="6" data-suffix="+">0+</span>
+      <div class="stat-item" data-reveal="zoom" data-delay="100">
+        <span class="stat-number" data-target="18" data-suffix="+">0+</span>
         <span class="stat-label">Projects Completed</span>
       </div>
-      <div class="stat-item fade-in">
-        <span class="stat-number" data-target="29" data-suffix="+">0+</span>
+      <div class="stat-item" data-reveal="zoom" data-delay="200">
+        <span class="stat-number" data-target="35" data-suffix="+">0+</span>
         <span class="stat-label">Technologies Used</span>
       </div>
-      <div class="stat-item fade-in">
+      <div class="stat-item" data-reveal="zoom" data-delay="300">
         <span class="stat-number" data-target="2" data-suffix=" yrs">0 yrs</span>
         <span class="stat-label">Learning Journey</span>
       </div>
-      <div class="stat-item fade-in">
+      <div class="stat-item" data-reveal="zoom" data-delay="400">
         <span class="stat-number" data-target="100" data-suffix="%">0%</span>
         <span class="stat-label">Commitment</span>
       </div>
     </section>
 
     <!-- ABOUT SNIPPET -->
-    <section class="section" style="background:var(--bg-secondary); border-bottom:1px solid var(--border);">
-      <div class="section-header fade-in">
+    <section class="section" style="background:var(--bg-secondary); border-bottom:1px solid var(--border); position:relative; overflow:hidden;">
+      <!-- Geo decorations -->
+      <div class="geo-shape geo-shape-circle" style="width:50px;height:50px;top:10%;right:5%;"></div>
+      <div class="geo-shape geo-shape-square" style="width:30px;height:30px;bottom:15%;left:3%;"></div>
+
+      <div class="section-header" data-reveal="up">
         <span class="section-tag">// Who I Am</span>
         <h2 class="section-title">A Quick Introduction</h2>
         <div class="section-line"></div>
       </div>
-      <div class="home-about-grid fade-in">
-        <div class="home-about-text">
+      <div class="home-about-grid">
+        <div class="home-about-text" data-reveal="left">
           <p>
             I'm <strong>Sanzidul Islam</strong>, an undergraduate student of 
             <strong>Electronics &amp; Telecommunication Engineering (ETE)</strong>. 
@@ -114,7 +130,7 @@
           </p>
           <a href="about.html" class="btn btn-outline" style="margin-top:1.5rem; display:inline-flex;">Read Full Bio →</a>
         </div>
-        <div class="home-interests">
+        <div class="home-interests" data-reveal="right" data-delay="200">
           <div class="interest-chip"><i class="ri-flashlight-line"></i> Smart Grid Systems</div>
           <div class="interest-chip"><i class="ri-brain-line"></i> Deep Learning</div>
           <div class="interest-chip"><i class="ri-chat-quote-line"></i> NLP &amp; LLMs</div>
@@ -125,9 +141,14 @@
       </div>
     </section>
 
+    <div class="wave-divider"></div>
+
     <!-- FEATURED PROJECTS -->
-    <section class="section">
-      <div class="section-header fade-in">
+    <section class="section" style="position:relative; overflow:hidden;">
+      <div class="geo-shape geo-shape-tri" style="top:5%;left:3%;"></div>
+      <div class="geo-shape geo-shape-circle" style="width:35px;height:35px;bottom:10%;right:5%;"></div>
+
+      <div class="section-header" data-reveal="up">
         <span class="section-tag">// Featured Work</span>
         <h2 class="section-title">Selected Projects</h2>
         <div class="section-line"></div>
@@ -135,7 +156,7 @@
 
       <div class="projects-grid">
 
-        <article class="project-card fade-in">
+        <article class="project-card" data-reveal="up" data-delay="100">
           <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop" alt="Smart Grid" class="project-banner">
           <div class="project-body">
             <div class="project-number">01 / IoT + Power Systems</div>
@@ -153,7 +174,7 @@
           </div>
         </article>
 
-        <article class="project-card fade-in">
+        <article class="project-card" data-reveal="up" data-delay="200">
           <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=600&auto=format&fit=crop" alt="Salary Prediction" class="project-banner">
           <div class="project-body">
             <div class="project-number">02 / Machine Learning</div>
@@ -171,7 +192,7 @@
           </div>
         </article>
 
-        <article class="project-card fade-in">
+        <article class="project-card" data-reveal="up" data-delay="300">
           <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=600&auto=format&fit=crop" alt="Car Accident Risk" class="project-banner">
           <div class="project-body">
             <div class="project-number">03 / Machine Learning</div>
@@ -195,13 +216,15 @@
       </div>
     </section>
 
+    <div class="wave-divider"></div>
+
     <!-- CTA -->
     <section class="section cta-section">
-      <div class="fade-in">
+      <div data-reveal="zoom">
         <span class="section-tag">// Open to Collaborations</span>
         <h2 class="section-title">Let's Build Something Smart</h2>
         <p style="color:var(--text-muted); max-width:530px; margin:0 auto 2rem;">
-          I'm open to collaborations in Smart Grid, Machine Learning, Embedded Systems, 
+          I'm open to collaborations in Smart Grid, Machine Learning, NLP, LLMs, 
           and Intelligent Energy Systems. Have an exciting idea? Let's connect!
         </p>
         <a href="contact.html" class="btn btn-primary">Say Hello <i class="ri-chat-smile-2-line"></i></a>

@@ -49,6 +49,7 @@
         <button class="btn btn-primary filter-btn" data-filter="all">All</button>
         <button class="btn btn-outline filter-btn" data-filter="iot">IoT / Embedded</button>
         <button class="btn btn-outline filter-btn" data-filter="ml">Machine Learning</button>
+        <button class="btn btn-outline filter-btn" data-filter="dl">Deep Learning</button>
         <button class="btn btn-outline filter-btn" data-filter="game">Game Dev</button>
         <button class="btn btn-outline filter-btn" data-filter="web">Web Dev</button>
       </div>
@@ -183,12 +184,14 @@
         <article class="project-card fade-in" data-category="web">
           <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=600&auto=format&fit=crop" alt="Bongo Vashkor Club" class="project-banner">
           <div class="project-body">
-            <div class="project-number">06 / Web Development</div>
-            <h3 class="project-title">Bongo Vashkor Club – Community Management</h3>
+            <div class="project-number">06 / Full Stack Web</div>
+            <h3 class="project-title">Bongo Vashkor Club – Community Management Platform</h3>
             <p class="project-desc">
-              A full-stack community management website featuring a member directory with photos, 
-              event creation, expense tracking, and secure bKash payment integration. 
-              Includes an admin dashboard for managing club activities and finances.
+              A complete full-stack community management platform for handling club operations,
+              events, and member payments digitally. Features event creation &amp; management dashboard,
+              member registration &amp; authentication system, bKash payment integration for event fees,
+              announcement &amp; activity updates, secure REST API with role-based access control,
+              and MongoDB database integration.
               <br><br>
               <a href="https://blood-brothers-bv.netlify.app/" target="_blank" style="color:var(--accent); font-weight:600;">Live Website <i class="ri-external-link-line"></i></a>
             </p>
@@ -197,8 +200,283 @@
               <span class="project-tag">Express</span>
               <span class="project-tag">MongoDB</span>
               <span class="project-tag">bKash API</span>
+              <span class="project-tag">REST API</span>
+              <span class="project-tag">Auth</span>
               <span class="project-tag">Netlify/Render</span>
             </div>
+          </div>
+        </article>
+
+        <!-- Project 7: Spam Mail Detector -->
+        <article class="project-card fade-in" data-category="ml">
+          <img src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?q=80&w=600&auto=format&fit=crop" alt="Spam Mail Detector" class="project-banner">
+          <div class="project-body">
+            <div class="project-number">07 / Machine Learning</div>
+            <h3 class="project-title">Spam Mail Detector — NLP Classification</h3>
+            <p class="project-desc">
+              Built an NLP-based spam email detection system using Naive Bayes text classification.
+              Implemented a full data cleaning pipeline, CountVectorizer with Bag of Words feature
+              extraction, trained a Multinomial Naive Bayes classifier, and enabled real-time
+              prediction on custom email inputs.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">NLP</span>
+              <span class="project-tag">Naive Bayes</span>
+              <span class="project-tag">CountVectorizer</span>
+              <span class="project-tag">scikit-learn</span>
+            </div>
+            <a href="https://github.com/sanzidd/Spam-Mail-Detector-ML" target="_blank" style="color:var(--accent); font-weight:600; display:inline-block; margin-top:0.75rem;">View on GitHub <i class="ri-github-fill"></i></a>
+          </div>
+        </article>
+
+        <!-- Project 8: Random Forest + Hyperparameter Tuning -->
+        <article class="project-card fade-in" data-category="ml">
+          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=600&auto=format&fit=crop" alt="Random Forest" class="project-banner">
+          <div class="project-body">
+            <div class="project-number">08 / Machine Learning</div>
+            <h3 class="project-title">Breast Cancer Detection — Random Forest + Hyperparameter Tuning</h3>
+            <p class="project-desc">
+              Advanced ML project for breast cancer detection using ensemble methods including
+              Random Forest, XGBoost, CatBoost, and LightGBM. Applied GridSearchCV and
+              RandomizedSearchCV for hyperparameter optimization, Cost-Complexity Pruning on
+              Decision Trees, and implemented a three-way Train/Test/Validation split strategy.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Random Forest</span>
+              <span class="project-tag">XGBoost</span>
+              <span class="project-tag">CatBoost</span>
+              <span class="project-tag">GridSearchCV</span>
+              <span class="project-tag">scikit-learn</span>
+            </div>
+            <a href="https://github.com/sanzidd/Random-Forest-HyperparameterTuning-ML" target="_blank" style="color:var(--accent); font-weight:600; display:inline-block; margin-top:0.75rem;">View on GitHub <i class="ri-github-fill"></i></a>
+          </div>
+        </article>
+
+        <!-- Project 9: Customer Churn Prediction -->
+        <article class="project-card fade-in" data-category="ml">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" alt="Customer Churn" class="project-banner">
+          <div class="project-body">
+            <div class="project-number">09 / Machine Learning</div>
+            <h3 class="project-title">Customer Churn Prediction</h3>
+            <p class="project-desc">
+              End-to-end machine learning pipeline for predicting customer churn using
+              classification algorithms. Performed data preprocessing, feature engineering,
+              exploratory data analysis, and model evaluation to identify at-risk customers
+              and reduce business churn rates.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Classification</span>
+              <span class="project-tag">scikit-learn</span>
+              <span class="project-tag">Pandas</span>
+              <span class="project-tag">EDA</span>
+            </div>
+            <a href="https://github.com/sanzidd/Customer-Churn-Prediction-Project-using-ML" target="_blank" style="color:var(--accent); font-weight:600; display:inline-block; margin-top:0.75rem;">View on GitHub <i class="ri-github-fill"></i></a>
+          </div>
+        </article>
+
+        <!-- Project 10: Churn Modelling with Decision Tree -->
+        <article class="project-card fade-in" data-category="ml">
+          <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=600&auto=format&fit=crop" alt="Churn Modelling" class="project-banner">
+          <div class="project-body">
+            <div class="project-number">10 / Machine Learning</div>
+            <h3 class="project-title">Churn Modelling with Decision Tree</h3>
+            <p class="project-desc">
+              Customer churn modelling using Decision Tree classification. Built a complete
+              pipeline from data analysis through to tree-based prediction, with visualization
+              of decision boundaries and feature importance analysis to understand key churn drivers.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Decision Tree</span>
+              <span class="project-tag">scikit-learn</span>
+              <span class="project-tag">Matplotlib</span>
+              <span class="project-tag">Feature Importance</span>
+            </div>
+            <a href="https://github.com/sanzidd/Churn-Modelling-with-Decision-Tree-ML" target="_blank" style="color:var(--accent); font-weight:600; display:inline-block; margin-top:0.75rem;">View on GitHub <i class="ri-github-fill"></i></a>
+          </div>
+        </article>
+
+        <!-- Project 11: Support Vector Machine -->
+        <article class="project-card fade-in" data-category="ml">
+          <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=600&auto=format&fit=crop" alt="Support Vector Machine" class="project-banner">
+          <div class="project-body">
+            <div class="project-number">11 / Machine Learning</div>
+            <h3 class="project-title">Support Vector Machine (SVM)</h3>
+            <p class="project-desc">
+              Implemented Support Vector Machine classifiers with different kernel functions
+              for binary and multi-class classification tasks. Explored linear, polynomial,
+              and RBF kernels with hyperparameter tuning to achieve optimal decision boundaries
+              and high classification accuracy.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">SVM</span>
+              <span class="project-tag">Kernel Methods</span>
+              <span class="project-tag">scikit-learn</span>
+              <span class="project-tag">Classification</span>
+            </div>
+            <a href="https://github.com/sanzidd/Support-Vector-Machine-ML-" target="_blank" style="color:var(--accent); font-weight:600; display:inline-block; margin-top:0.75rem;">View on GitHub <i class="ri-github-fill"></i></a>
+          </div>
+        </article>
+
+        <!-- Project 12: Cross Validation -->
+        <article class="project-card fade-in" data-category="ml">
+          <img src="https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?q=80&w=600&auto=format&fit=crop" alt="Cross Validation" class="project-banner">
+          <div class="project-body">
+            <div class="project-number">12 / Machine Learning</div>
+            <h3 class="project-title">Cross Validation with Machine Learning</h3>
+            <p class="project-desc">
+              Demonstrated various cross-validation techniques including K-Fold, Stratified K-Fold,
+              and Leave-One-Out cross validation applied to machine learning models. Compared
+              model performance metrics across different validation strategies to ensure robust
+              and reliable model evaluation.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Cross Validation</span>
+              <span class="project-tag">K-Fold</span>
+              <span class="project-tag">scikit-learn</span>
+              <span class="project-tag">Model Evaluation</span>
+            </div>
+            <a href="https://github.com/sanzidd/Cross-Validation-With-Machine-Learning" target="_blank" style="color:var(--accent); font-weight:600; display:inline-block; margin-top:0.75rem;">View on GitHub <i class="ri-github-fill"></i></a>
+          </div>
+        </article>
+
+        <!-- Project 13: Save ML Model -->
+        <article class="project-card fade-in" data-category="ml">
+          <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=600&auto=format&fit=crop" alt="Save ML Model" class="project-banner">
+          <div class="project-body">
+            <div class="project-number">13 / Machine Learning</div>
+            <h3 class="project-title">Save &amp; Load ML Models</h3>
+            <p class="project-desc">
+              Guide and implementation for saving and loading trained machine learning models
+              using pickle and joblib serialization. Enables model persistence for production
+              deployment, allowing trained models to be reused without retraining — essential
+              for real-world ML workflows.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Pickle</span>
+              <span class="project-tag">Joblib</span>
+              <span class="project-tag">Model Deployment</span>
+              <span class="project-tag">scikit-learn</span>
+            </div>
+            <a href="https://github.com/sanzidd/Save-ML-Model" target="_blank" style="color:var(--accent); font-weight:600; display:inline-block; margin-top:0.75rem;">View on GitHub <i class="ri-github-fill"></i></a>
+          </div>
+        </article>
+
+        <!-- Project 14: Fake News Classification -->
+        <article class="project-card fade-in" data-category="ml">
+          <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?q=80&w=600&auto=format&fit=crop" alt="Fake News Classification" class="project-banner">
+          <div class="project-body">
+            <div class="project-number">14 / Machine Learning + NLP</div>
+            <h3 class="project-title">Fake News Classification — NLP</h3>
+            <p class="project-desc">
+              Built an NLP-based fake news detection system using text classification techniques.
+              Implemented text preprocessing, TF-IDF vectorization, and trained classifiers
+              to distinguish between real and fake news articles with high accuracy.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">NLP</span>
+              <span class="project-tag">TF-IDF</span>
+              <span class="project-tag">Text Classification</span>
+              <span class="project-tag">scikit-learn</span>
+            </div>
+            <a href="https://github.com/sanzidd/Fake-News-Classification-Using-ML-NLP" target="_blank" style="color:var(--accent); font-weight:600; display:inline-block; margin-top:0.75rem;">View on GitHub <i class="ri-github-fill"></i></a>
+          </div>
+        </article>
+
+        <!-- Project 15: Breast Cancer Prediction with PyCaret -->
+        <article class="project-card fade-in" data-category="ml">
+          <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=600&auto=format&fit=crop" alt="Breast Cancer Prediction" class="project-banner">
+          <div class="project-body">
+            <div class="project-number">15 / Machine Learning</div>
+            <h3 class="project-title">Breast Cancer Prediction — PyCaret AutoML</h3>
+            <p class="project-desc">
+              Automated machine learning pipeline for breast cancer prediction using PyCaret.
+              Compared multiple classification models simultaneously, performed automated
+              feature engineering, hyperparameter tuning, and model selection with minimal code.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">PyCaret</span>
+              <span class="project-tag">AutoML</span>
+              <span class="project-tag">Classification</span>
+              <span class="project-tag">scikit-learn</span>
+            </div>
+            <a href="https://github.com/sanzidd/Breast-Cancer-Prediction-using-PyCaret-ML" target="_blank" style="color:var(--accent); font-weight:600; display:inline-block; margin-top:0.75rem;">View on GitHub <i class="ri-github-fill"></i></a>
+          </div>
+        </article>
+
+        <!-- Project 16: Market Basket Analysis -->
+        <article class="project-card fade-in" data-category="ml">
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=600&auto=format&fit=crop" alt="Market Basket Analysis" class="project-banner">
+          <div class="project-body">
+            <div class="project-number">16 / Machine Learning</div>
+            <h3 class="project-title">Market Basket Analysis — K-Means Clustering</h3>
+            <p class="project-desc">
+              Unsupervised learning project using K-Means clustering algorithm for market basket
+              analysis. Performed customer segmentation based on purchasing behavior, identified
+              buying patterns, and visualized clusters for business insights.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">K-Means</span>
+              <span class="project-tag">Clustering</span>
+              <span class="project-tag">Unsupervised Learning</span>
+              <span class="project-tag">Matplotlib</span>
+            </div>
+            <a href="https://github.com/sanzidd/Market-Basket-Analysis-using-K-Means-Cluster-Algorithm-checkpoint-ML" target="_blank" style="color:var(--accent); font-weight:600; display:inline-block; margin-top:0.75rem;">View on GitHub <i class="ri-github-fill"></i></a>
+          </div>
+        </article>
+
+        <!-- Project 17: Portfolio Website Full Stack -->
+        <article class="project-card fade-in" data-category="web">
+          <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=600&auto=format&fit=crop" alt="Portfolio Website" class="project-banner">
+          <div class="project-body">
+            <div class="project-number">17 / Full Stack Web</div>
+            <h3 class="project-title">Portfolio Website — Full Stack</h3>
+            <p class="project-desc">
+              Personal portfolio website with a complete full-stack architecture. Built with
+              HTML/CSS/JavaScript frontend, Node.js + Express REST API backend, and MongoDB
+              database integration for dynamic content management and contact form handling.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">HTML/CSS/JS</span>
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">Express</span>
+              <span class="project-tag">MongoDB</span>
+              <span class="project-tag">REST API</span>
+            </div>
+            <a href="https://github.com/sanzidd/sanzid-portfolio-frontend" target="_blank" style="color:var(--accent); font-weight:600; display:inline-block; margin-top:0.75rem;">View on GitHub <i class="ri-github-fill"></i></a>
+          </div>
+        </article>
+
+        <!-- Project 18: Deep Learning Collection -->
+        <article class="project-card fade-in" data-category="dl">
+          <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=600&auto=format&fit=crop" alt="Deep Learning" class="project-banner">
+          <div class="project-body">
+            <div class="project-number">18 / Deep Learning</div>
+            <h3 class="project-title">Deep Learning Fundamentals — ANN/CNN Collection</h3>
+            <p class="project-desc">
+              Comprehensive collection of Deep Learning projects covering core concepts:
+              Multi-Layer Perceptron, Backpropagation, Gradient Descent, Weight Initialization
+              techniques, Batch Normalization, Optimizers in ANN, Neural Network performance
+              improvement, Padding & Pooling demonstrations using KERAS in CNN.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">TensorFlow</span>
+              <span class="project-tag">Keras</span>
+              <span class="project-tag">ANN</span>
+              <span class="project-tag">CNN</span>
+              <span class="project-tag">Deep Learning</span>
+            </div>
+            <a href="https://github.com/sanzidd/Multi-Layer-Perceptron-Deep-Learning" target="_blank" style="color:var(--accent); font-weight:600; display:inline-block; margin-top:0.75rem;">View on GitHub <i class="ri-github-fill"></i></a>
           </div>
         </article>
 
