@@ -23,7 +23,7 @@ A clean, responsive personal portfolio website showcasing my journey as an **Ele
 
 ## ✨ Features
 
-- **Responsive Design** — Fully optimized for desktop, tablet, and mobile devices
+- **Responsive Design** — Fully optimized for desktop, tablet, and mobile devic
 - **Dark / Light Mode** — Toggle between themes for comfortable viewing
 - **Multi-page Layout** — Dedicated pages for About, Education, Skills, Projects, and Contact
 - **Admin Dashboard** — Backend-connected admin panel for managing content
